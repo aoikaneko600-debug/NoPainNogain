@@ -1,7 +1,3 @@
-img {
-  border: none;
-}
-
 ![images](https://github.com/user-attachments/assets/2d3b460a-e9b5-4fd3-bff6-b7ef32d0bd56)
 
 <p align="center" style="color:#FF69B4;"></p>
