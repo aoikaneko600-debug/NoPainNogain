@@ -1,0 +1,76 @@
+
+<h2 align="center" style="color:#FF69B4;">🎉 プロテイン摂取ガイド 3択クイズ 🎉</h2>
+
+<div id="quiz-app" style="max-width:500px;margin:0 auto;">
+  <script>
+    const quiz = [
+      {
+        question: "運動直後に推奨されるプロテインの種類はどれ？",
+        choices: ["ソイプロテイン", "ホエイプロテイン", "カゼインプロテイン"],
+        answer: 1 // index of correct choice
+      },
+      {
+        question: "就寝前の摂取に適したプロテインは？",
+        choices: ["ホエイプロテイン", "カゼインプロテイン", "ソイプロテイン"],
+        answer: 1
+      },
+      {
+        question: "プロテイン摂取時に注意すべきポイントはどれ？",
+        choices: [
+          "固形食より満腹感が強い",
+          "過剰摂取に注意が必要",
+          "筋分解を促進する"
+        ],
+        answer: 1
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function renderQuiz() {
+      const app = document.getElementById('quiz-app');
+      if (current < quiz.length) {
+        const q = quiz[current];
+        app.innerHTML = `
+          <div style="margin-bottom:1em;font-weight:700;">Q${current+1}. ${q.question}</div>
+          ${q.choices.map((c,i)=>`
+            <button onclick="selectAnswer(${i})"
+              style="display:block;width:100%;margin-bottom:8px;padding:8px;font-size:1em;border-radius:5px;border:1px solid #FF69B4;background:#fff;">
+              ${c}
+            </button>
+          `).join('')}
+          <div style="margin-top:1em;color:#999;">${current+1} / ${quiz.length}問目</div>
+        `;
+      } else {
+        app.innerHTML = `
+          <div style="font-size:1.3em;font-weight:700;color:#FF1493;">結果</div>
+          <div style="margin:1em 0;">
+            ${quiz.length}問中 <span style="color:#FF69B4;">${score}</span>問正解！<br>
+            ${score === quiz.length ? "パーフェクト！💯" : score >= 2 ? "よくできました！👍" : "またチャレンジしてね！"}
+          </div>
+          <button onclick="restartQuiz()" style="padding:8px 16px;border-radius:5px;border:1px solid #FF69B4;background:#fff;">もう一度挑戦</button>
+        `;
+      }
+    }
+
+    window.selectAnswer = function(index) {
+      if (quiz[current].answer === index) score++;
+      current++;
+      renderQuiz();
+    };
+
+    window.restartQuiz = function() {
+      current = 0;
+      score = 0;
+      renderQuiz();
+    };
+
+    window.onload = renderQuiz;
+  </script>
+  <noscript>
+    <p>このクイズはJavaScriptを有効にすると遊べます。</p>
+  </noscript>
+</div>
+
+<p align="center" style="color:#FF69B4;"></p>
