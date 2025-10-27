@@ -1,4 +1,3 @@
-
 <p align="center" style="color:#FF69B4;"></p>
 
 <h1 align="center" style="color:#FF1493; font-size:2.4em; font-weight:800;">効果的なプロテイン摂取ガイド 💖</h1>
