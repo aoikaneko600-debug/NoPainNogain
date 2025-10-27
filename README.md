@@ -29,4 +29,4 @@
 
 ---
 
-<p align="center" style="color:#FF69B4;">色や見出しサイズ、絵文字の有無を変更したい場合は教えてください。</p>
+<p align="center" style="color:#FF69B4;"></p>
